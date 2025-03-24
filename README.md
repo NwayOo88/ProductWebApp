@@ -32,9 +32,9 @@ cd ProductWebApp
 
 ### 2️⃣ Create the Database
 - Open SQL Server Management Studio (SSMS) or your preferred SQL tool.
-- Run the provided `schema.sql` script to create the database and tables.
+- Run the provided script to create the database and tables.
 
-**Important:**
+**Instruction:**
 - First, create the database manually:
 ```sql
 CREATE DATABASE ProductDB;
