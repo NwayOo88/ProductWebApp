@@ -41,7 +41,7 @@ CREATE DATABASE ProductDB;
 GO
 USE ProductDB;
 ```
-- Then execute the provided `ProductDB_schema_data.sql` script.
+- Then execute the provided `ProductDB_Scripts.sql` script which included both schema and data.
 
 ### 3️⃣ Configure the Connection String
 In `appsettings.json`, update the connection string as per your local setup:
