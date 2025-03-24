@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProductWebApp.Models.Product>
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<div class="d-flex justify-content-end">
+    <a href="@Url.Action("Create")" class="btn btn-success mb-3">Add New Product</a>
+</div>
+
+<table class="table table-striped" id="productTable">
+    <thead>
+        <tr>
+            <th>SN</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>CreatedDate</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null)
+        {
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>$@product.Price</td>
+                    <td>@product.Description</td>
+                    <td>@product.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = product.Id })" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="@Url.Action("Delete", new { id = product.Id })" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#productTable').DataTable({
+                searching: false,   
+                lengthChange: false 
+            });
+
+        });
+    </script>
+}
